@@ -10,7 +10,7 @@ function MyBlogs() {
     const fetchMyBlogs = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4001/api/blogs/my-blog",
+          "https://blog-app-mern-yfob.onrender.com/api/blogs/my-blog",
           { withCredentials: true }
         );
         setMyBlogs(data);
@@ -25,7 +25,7 @@ function MyBlogs() {
   const handleDelete = async (id) => {
     try {
       const res = await axios.delete(
-        `http://localhost:4001/api/blogs/delete/${id}`,
+        `https://blog-app-mern-yfob.onrender.com/api/blogs/delete/${id}`,
         { withCredentials: true }
       );
       toast.success(res.data.message || "Blog deleted successfully");
